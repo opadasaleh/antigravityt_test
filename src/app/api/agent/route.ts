@@ -1,4 +1,4 @@
-import { google } from '@ai-sdk/google';
+import { mistral } from '@ai-sdk/mistral';
 import { generateObject } from 'ai';
 import { z } from 'zod';
 
@@ -7,17 +7,21 @@ export async function POST(req: Request) {
         const { location, university, major, skills } = await req.json();
 
         // Check availability of API Key
-        const apiKey = process.env.GOOGLE_GENERATIVE_AI_API_KEY;
+        const apiKey = process.env.MISTRAL_API_KEY;
 
-        console.log("🔑 API Key Status:", apiKey ? `Present (Length: ${apiKey.length})` : "MISSING");
+        console.log("🛠️ ENV DEBUG:", {
+            hasMistralKey: !!apiKey,
+            keyLength: apiKey?.length,
+            availableKeys: Object.keys(process.env).filter(k => k.toLowerCase().includes('mistral') || k.toLowerCase().includes('api'))
+        });
 
-        if (!apiKey || apiKey === 'your_google_api_key_here') {
-            console.warn("⚠️ Google API Key is missing or default placeholder.");
+        if (!apiKey || apiKey === 'your_mistral_api_key_here') {
+            console.warn("⚠️ Mistral API Key is missing or default placeholder.");
             throw new Error("Missing API Key"); // Trigger fallback
         }
 
         const result = await generateObject({
-            model: google('gemini-1.5-flash'),
+            model: mistral('devstral-small-latest'),
             system: `You are an expert Hackathon Finder Agent. Your goal is to find or generate 3-5 realistic hackathon opportunities based on the user's profile.
       
       If you know of real upcoming hackathons in Jordan or Global/Online, use them.

@@ -3,45 +3,24 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-<<<<<<< HEAD
   --neon-green: #d4e600;
   --neon-purple: #663DE4;
   --matte-black: #ffffff;
-=======
->>>>>>> abe30560363498618d161163d07235069690f1cd
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-<<<<<<< HEAD
   --color-neon-green: var(--neon-green);
   --color-neon-purple: var(--neon-purple);
   --color-matte-black: var(--matte-black);
 
-=======
->>>>>>> abe30560363498618d161163d07235069690f1cd
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-<<<<<<< HEAD
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
 }
-=======
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
->>>>>>> abe30560363498618d161163d07235069690f1cd

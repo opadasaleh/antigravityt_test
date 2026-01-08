@@ -9,12 +9,18 @@
     "lint": "eslint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@ai-sdk/google": "^3.0.6",
     "ai": "^6.0.21",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "zod": "^4.3.5"
+=======
+    "next": "16.1.1",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+>>>>>>> abe30560363498618d161163d07235069690f1cd
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
